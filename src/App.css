@@ -1,0 +1,88 @@
+/* ===========================================================
+   Design Tokens — Warm Notebook (Light + Dark)
+   สลับด้วย [data-theme="light" | "dark"] บน <html>
+   =========================================================== */
+
+/* ---- LIGHT (paper warm) ---- */
+:root,
+[data-theme='light'] {
+  --paper: #fbf7f0;
+  --paper-2: #f3ecdd;
+  --ink: #211c18;
+  --ink-soft: #5c534a;
+  --line: #e3d9c6;
+  --terra: #c8553d;
+  --terra-deep: #a23e2b;
+  --code-bg: #f3ecdd;
+  --shadow: 0 1px 2px rgba(33, 28, 24, 0.06), 0 8px 24px rgba(33, 28, 24, 0.07);
+}
+
+/* ---- DARK (espresso warm) ---- */
+[data-theme='dark'] {
+  --paper: #1c1815;
+  --paper-2: #26201a;
+  --ink: #f3ecdd;
+  --ink-soft: #b3a896;
+  --line: #3d342b;
+  --terra: #e0705a;
+  --terra-deep: #c8553d;
+  --code-bg: #322a22;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+:root {
+  --radius: 14px;
+  --radius-sm: 10px;
+  --font-sans: 'IBM Plex Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --nav-h: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--terra);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}

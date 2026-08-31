@@ -1,0 +1,315 @@
+/* === Products.css (Warm Notebook styled) === */
+
+.products-page { }
+
+.products-controls {
+  display: flex;
+  gap: .6rem;
+  margin-bottom: 1.3rem;
+  flex-wrap: wrap;
+}
+
+.products-search {
+  flex: 1;
+  min-width: 200px;
+  padding: .6rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: .9rem;
+}
+
+.products-search:focus {
+  outline: none;
+  border-color: var(--terra);
+  box-shadow: 0 0 0 3px rgba(200,85,61,.18);
+}
+
+.products-select {
+  padding: .6rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.products-error {
+  color: var(--terra-deep);
+  background: rgba(200,85,61,.08);
+  padding: .7rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.products-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skeleton-card {
+  aspect-ratio: 3/4;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--paper-2) 25%, var(--paper) 50%, var(--paper-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Card */
+.product-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.14);
+  border-color: var(--terra);
+}
+
+.product-img {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.04);
+}
+
+.product-img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--terra);
+  background: var(--paper-2);
+}
+
+.product-img-fallback.large { font-size: 5rem; }
+
+.product-badge {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  background: var(--terra);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: .72rem;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+}
+
+.product-body {
+  padding: .8rem;
+}
+
+.product-title {
+  font-family: var(--sans);
+  font-size: .88rem;
+  font-weight: 600;
+  margin: 0 0 .35rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-desc {
+  font-size: .78rem;
+  color: var(--ink-soft);
+  margin: 0 0 .55rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--terra);
+}
+
+.product-rating {
+  font-size: .78rem;
+  color: var(--ink-soft);
+}
+
+/* Pagination */
+.products-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.products-pageinfo {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--ink-soft);
+}
+
+/* Detail modal */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fade .2s ease;
+}
+
+@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
+.detail-modal {
+  background: var(--paper);
+  border-radius: var(--radius);
+  max-width: 800px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.8rem;
+  position: relative;
+  animation: pop .25s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.96) translateY(8px) }
+  to { opacity: 1; transform: none }
+}
+
+.detail-close {
+  position: absolute;
+  top: .8rem;
+  right: .8rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: .9rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.detail-close:hover { background: var(--paper-2); }
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.detail-img {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-info h2 {
+  font-family: var(--serif);
+  margin: .5rem 0 .8rem;
+}
+
+.detail-desc {
+  color: var(--ink-soft);
+  font-size: .92rem;
+  margin-bottom: 1.2rem;
+}
+
+.detail-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  margin-bottom: 1.2rem;
+}
+
+.detail-meta-grid > div {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: .6rem .75rem;
+}
+
+.detail-meta-grid span {
+  display: block;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+}
+
+.detail-meta-grid strong {
+  font-size: 1.05rem;
+  font-family: var(--mono);
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.detail-tag {
+  font-size: .72rem;
+  padding: .2rem .55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+}
+
+@media (max-width: 600px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
