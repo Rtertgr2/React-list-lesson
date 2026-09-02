@@ -9,6 +9,7 @@ const links = [
   { to: '/profile', label: 'Profile' },
   { to: '/todo', label: 'Todo' },
   { to: '/products', label: 'Products' },
+  { to: '/guide', label: 'คู่มือ' },
 ]
 
 export default function Navbar() {

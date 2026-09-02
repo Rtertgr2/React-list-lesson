@@ -97,11 +97,11 @@ export default function ProductsPage() {
 
           {!search && !activeCat && pages > 1 && (
             <div className="products-pagination">
-              <RippleBtn className="btn ghost" disabled={skip === 0} onClick={() => goPage(Math.max(0, skip - PER_PAGE))}>
+              <RippleBtn className="btn ghost" onClick={() => goPage(Math.max(0, skip - PER_PAGE))}>
                 ← ก่อนหน้า
               </RippleBtn>
               <span className="products-pageinfo">หน้า {current} / {pages}</span>
-              <RippleBtn className="btn ghost" disabled={skip + PER_PAGE >= total} onClick={() => goPage(skip + PER_PAGE)}>
+              <RippleBtn className="btn ghost" onClick={() => goPage(skip + PER_PAGE)}>
                 ถัดไป →
               </RippleBtn>
             </div>
@@ -118,7 +118,7 @@ export default function ProductsPage() {
 
 // local ripple button wrapper
 import RippleButton from '../components/RippleButton'
-function RippleBtn({ children, className = '', disabled, onClick }: { children: React.ReactNode; className?: string; disabled?: boolean; onClick: () => void }) {
+function RippleBtn({ children, className = '', onClick }: { children: React.ReactNode; className?: string; onClick: () => void }) {
   return (
     <RippleButton className={className} onClick={onClick} ariaLabel="">
       {children}

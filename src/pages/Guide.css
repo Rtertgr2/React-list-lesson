@@ -1,0 +1,105 @@
+.guide-page { }
+
+.guide-actions {
+  display: flex;
+  gap: .6rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.guide-docs-btn {
+  background: #4285f4;
+  border-color: #4285f4;
+}
+
+.guide-docs-btn:hover {
+  background: #3367d6;
+  border-color: #3367d6;
+}
+
+.guide-content {
+  font-size: .92rem;
+}
+
+.guide-content h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  margin: 2rem 0 .8rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .35rem;
+}
+
+.guide-content h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin: 1.5rem 0 .5rem;
+}
+
+.guide-content p {
+  margin: 0 0 .8rem;
+  color: var(--ink-soft);
+}
+
+.guide-content ul {
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.guide-content li {
+  margin: .3rem 0;
+}
+
+.guide-content a {
+  color: var(--terra);
+  text-decoration: none;
+}
+
+.guide-content a:hover {
+  text-decoration: underline;
+}
+
+.guide-content pre {
+  background: #2d2620;
+  color: #f3ecdd;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: .85rem;
+  margin: 1rem 0;
+}
+
+.guide-content code {
+  font-family: var(--mono);
+  background: var(--paper-2);
+  padding: .15rem .4rem;
+  border-radius: 5px;
+  font-size: .85rem;
+}
+
+.guide-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.guide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  margin: 1rem 0;
+}
+
+.guide-content th,
+.guide-content td {
+  text-align: left;
+  padding: .5rem .65rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-content th {
+  font-family: var(--mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink-soft);
+}

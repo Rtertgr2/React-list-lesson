@@ -6,8 +6,9 @@ import SubjectsPage from './SubjectsPage'
 import ProfilePage from './ProfilePage'
 import TodoPage from './TodoPage'
 import ProductsPage from '../products/ProductsPage'
+import GuidePage from './GuidePage'
 
-const order = ['/', '/greeting', '/subjects', '/profile', '/todo', '/products']
+const order = ['/', '/greeting', '/subjects', '/profile', '/todo', '/products', '/guide']
 
 export default function AnimatedRoutes() {
   const location = useLocation()
@@ -41,6 +42,7 @@ export default function AnimatedRoutes() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/todo" element={<TodoPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/guide" element={<GuidePage />} />
       </Routes>
     </div>
   )
