@@ -77,7 +77,7 @@ export default function GuidePage() {
       <div className="guide-actions">
         <a
           className="btn guide-docs-btn"
-          href="https://docs.google.com/document/d/1a2B3c4D5e6F7g8H9i0JkLmNoPqRsTuVwXyZ/edit"
+          href="https://docs.google.com/document/d/1gJPNozdcLEpWWmRI1s7mgsQOLfST2xbqs33lPVzROfA/edit?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
