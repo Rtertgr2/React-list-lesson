@@ -25,7 +25,7 @@ export default function HomePage() {
             <span className="txt">หน้า Products — ดึงข้อมูลจาก DummyJSON API แสดงแบบ grid + ค้นหา + กรองหมวดหมู่ + pagination</span>
           </li>
           <li className="item">
-            <a href="#/guide" className="txt" style={{ color: 'var(--terra)', textDecoration: 'none' }}>หน้าคู่มือ — วิธี Deploy ขึ้น Firebase Hosting ทีละขั้นตอน</a>
+            <span className="txt">หน้าคู่มือ — วิธี Deploy ขึ้น Firebase Hosting ทีละขั้นตอน</span>
           </li>
         </ul>
       </div>
